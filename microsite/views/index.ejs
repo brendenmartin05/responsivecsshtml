@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsive Navigation Demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="style.css">
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="animate.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+	<script>
+		$(function() {
+			var pull 		= $('#pull');
+				menu 		= $('nav ul');
+				menuHeight	= menu.height();
+
+			$(pull).on('click', function(e) {
+				e.preventDefault();
+				menu.slideToggle();
+			});
+
+			$(window).resize(function(){
+        		var w = $(window).width();
+        		if(w > 320 && menu.is(':hidden')) {
+        			menu.removeAttr('style');
+        		}
+    		});
+		});
+	</script>
+</head>
+<body>
+<div class="container">
+	<nav class="clearfix">
+		<ul class="clearfix">
+			<li><a href="#home" >Home</a></li>
+			<li><a href="#socials">Social</a></li>
+			<li><a href="#experiences" >Experience</a></li>
+			<li><a href="#psections" >Passions</a></li>	
+		</ul>
+		<a href="#" id="pull">Menu</a>
+	</nav>
+
+	<section id="home" data-type="background" data-speed="10">    
+		<div id="bg">
+			<div class="container">
+			<article class="title"> 
+				<h1 class="animated flip brenden">I am Brenden Martin</h1>
+					<a href="#social">
+					<h2 class="cta cta-1 animated slideInUp">Get to know me!</h2></a>
+			</article>
+			</div>
+		</div>                       
+	</section>   
+
+	<section id="social" data-type="background" data-speed="10">
+		<article id="socials">
+			<header>
+				<h1 class="heading">Social</h1>
+					<p class="heading">My life, through my lens. </p>
+			</header>
+			<div class="row instagram-pic">
+				<% medias.forEach(function(data){ %>
+					<a href="<%= data.link%>" target="_blank">
+						<img src="<%= data.images.thumbnail.url%>" class="instagram" >
+					</a>
+				<%	}) %>
+			</div>
+		</article>
+	</section>
+	     
+
+	<section id="experience" data-type="background" data-speed="10">
+		<article id="experiences">
+			<h1 class="heading" >Work Experience</h1>
+				<div class="work1">
+					<h2>General Assembly</h2>
+					<p>Web Developer | 70+ Hours/Week learning website development</p>
+				</div>
+				<div class="work2">
+					<h2>Yesler Marketing</h2>
+					<p>Account Strategist | Develop strategy for B2b marketing campaigns</p>
+				</div>
+				<div class="work3">
+					<h2>RentVersity</h2>
+					<p>CEO | Launched and grew business across 6 markets</p>
+				</div>
+
+				<div class="skills">
+					<p class="heading skills"> Skills </p>
+					<h3>Digital Marketing</h3>
+					<div id="progressbar"><div id="progress" ><div id="pbaranim"></div></div></div>
+					<h3>Design | Adobe CS6 Suite</h3>
+					<div id="progressbard"><div id="progressd" ><div id="pbaranimd"></div></div></div>
+					<h3>Web Development</h3>
+					<div id="progressbarw"><div id="progressw" ><div id="pbaranimw"></div></div></div>
+				</div>
+		</article>
+	</section>
+
+	<section id="psection" data-type="background" data-speed="10">
+		<h1 class="heading" >My Passions </h1>
+		<p class="heading">Family, Seahawks, Cougs, Repeat</p>
+		<article class="sliding" id="psections"></article>
+	</section>
+	
+	<footer class="footer-distributed">
+
+			<div class="footer-right">
+
+				<a href="https://www.facebook.com/brenden.martin" target="_blank"><img src="img/facebook.ico"></a>
+				<a href="https://www.linkedin.com/in/brendenmartin" target="_blank"><img src="img/linkedin.ico"></a>
+				<a href="https://github.com/brendenmartin05" target="_blank"><img src="img/github1.png"></a>
+
+			</div>
+
+			<div class="footer-left">
+
+				<p class="footer-links">
+					<a href="#home">Home</a>
+					·
+					<a href="#social">Social</a>
+					·
+					<a href="#experience">Work Experience</a>
+					·
+					<a href="#psection">Passions</a>
+					·
+				</p>
+
+				<p>Brenden Martin &copy; 2015</p>
+			</div>
+
+		</footer>
+
+</div>	
+</body>
+</html>
